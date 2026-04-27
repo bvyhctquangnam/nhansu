@@ -576,5 +576,89 @@ document.getElementById('searchInput').addEventListener('input', (e) => { curren
 document.getElementById('exportExcelBtn').addEventListener('click', exportToExcel);
 window.onclick = (e) => { if (e.target === document.getElementById('historyModal')) closeModal(); };
 
+// ==================== HỆ THỐNG ĐĂNG NHẬP ====================
+const LOGIN_KEY = 'yht_login_session';
+const USERS = [
+    { username: 'admin', password: 'admin123', role: 'admin', name: 'Quản trị viên' },
+    { username: 'user', password: 'user123', role: 'user', name: 'Người dùng' }
+];
+
+let currentUser = null;
+
+function checkLoginStatus() {
+    const saved = localStorage.getItem(LOGIN_KEY);
+    if (saved) {
+        try {
+            const session = JSON.parse(saved);
+            if (session.expiry && Date.now() < session.expiry) {
+                currentUser = session.user;
+                document.getElementById('loginModal').style.display = 'none';
+                document.getElementById('logoutBtn').style.display = 'inline-flex';
+                return true;
+            } else {
+                localStorage.removeItem(LOGIN_KEY);
+            }
+        } catch(e) {}
+    }
+    document.getElementById('loginModal').style.display = 'flex';
+    document.getElementById('logoutBtn').style.display = 'none';
+    return false;
+}
+
+function doLogin(username, password, remember) {
+    const user = USERS.find(u => u.username === username && u.password === password);
+    if (user) {
+        currentUser = user;
+        if (remember) {
+            const session = {
+                user: { username: user.username, role: user.role, name: user.name },
+                expiry: Date.now() + (30 * 24 * 60 * 60 * 1000) // 30 ngày
+            };
+            localStorage.setItem(LOGIN_KEY, JSON.stringify(session));
+        }
+        document.getElementById('loginModal').style.display = 'none';
+        document.getElementById('logoutBtn').style.display = 'inline-flex';
+        document.getElementById('loginError').style.display = 'none';
+        updateDashboard(); // Refresh dữ liệu sau khi login
+        return true;
+    } else {
+        const errorDiv = document.getElementById('loginError');
+        errorDiv.innerText = '❌ Sai tên đăng nhập hoặc mật khẩu';
+        errorDiv.style.display = 'block';
+        return false;
+    }
+}
+
+function doLogout() {
+    localStorage.removeItem(LOGIN_KEY);
+    currentUser = null;
+    document.getElementById('loginModal').style.display = 'flex';
+    document.getElementById('logoutBtn').style.display = 'none';
+    // Xóa dữ liệu hiển thị để tránh nhìn thấy khi chưa login
+    document.getElementById('kpiGrid').innerHTML = '';
+    document.getElementById('staffTableBody').innerHTML = '';
+    document.getElementById('totalStaffInfo').innerHTML = '';
+}
+
+// Gắn sự kiện
+document.getElementById('doLoginBtn').addEventListener('click', () => {
+    const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const remember = document.getElementById('rememberCheckbox').checked;
+    doLogin(username, password, remember);
+});
+
+document.getElementById('logoutBtn').addEventListener('click', doLogout);
+
+// Cho phép nhấn Enter để đăng nhập
+document.getElementById('loginPassword').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        document.getElementById('doLoginBtn').click();
+    }
+});
+
+// Kiểm tra trạng thái khi load trang
+checkLoginStatus();
+
 // Khởi chạy
 updateDashboard();

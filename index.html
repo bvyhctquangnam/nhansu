@@ -21,6 +21,7 @@
         <div class="filter-bar">
             <div class="filter-group"><label><i class="fas fa-calendar"></i> Năm:</label><select id="yearSelect"><option value="2026" selected>2026</option><option value="2025">2025</option><option value="2024">2024</option></select></div>
             <button class="export-btn" id="exportExcelBtn"><i class="fas fa-file-excel"></i> Xuất Excel</button>
+	    <button class="logout-btn" id="logoutBtn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
         </div>
     </div>
 
@@ -131,7 +132,30 @@
         <div id="modalBody"></div>
     </div>
 </div>
-
+<!-- Modal đăng nhập -->
+<div id="loginModal" class="login-overlay" style="display: none;">
+    <div class="login-modal">
+        <div class="login-header">
+            <h2><i class="fas fa-id-card"></i> Bệnh viện YHCT Quảng Nam</h2>
+            <p>Đăng nhập Hệ thống quản lý người hành nghề</p>
+        </div>
+        <div class="input-group">
+            <label><i class="fas fa-user"></i> Tên đăng nhập</label>
+            <input type="text" id="loginUsername" placeholder="admin / user">
+        </div>
+        <div class="input-group">
+            <label><i class="fas fa-lock"></i> Mật khẩu</label>
+            <input type="password" id="loginPassword" placeholder="••••••">
+        </div>
+        <div class="login-options">
+            <label class="checkbox-label">
+                <input type="checkbox" id="rememberCheckbox"> Ghi nhớ đăng nhập
+            </label>
+        </div>
+        <button class="login-btn" id="doLoginBtn"><i class="fas fa-arrow-right-to-bracket"></i> Đăng nhập</button>
+        <div id="loginError" class="error-msg" style="display: none;"></div>
+    </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
