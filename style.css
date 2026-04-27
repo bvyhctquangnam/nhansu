@@ -5,10 +5,10 @@ body { background: #0a0f1a; font-family: 'Inter', sans-serif; padding: 8px; colo
 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 6px; }
 .title-section h1 { font-size: 1.15rem; font-weight: 700; background: linear-gradient(135deg, #60e0c0, #3080c0); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .title-section p { font-size: 0.8rem; color: #7a9aa8; margin-top: 2px; }
-.filter-bar { background: #0e1620; border-radius: 30px; padding: 3px 14px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; border: 1px solid #2a3a4a; }
+.filter-bar { background: #0e1620; border-radius: 30px; padding: 5px 5px; display: flex; gap: 5px; align-items: center; flex-wrap: wrap; border: 1px solid #2a3a4a; }
 .filter-group label { font-size: 0.68rem; color: #7a9aa8; }
 .filter-group select { background: #0a0f1a; border: 1px solid #2a5a5a; color: #eef5ff; padding: 3px 8px; border-radius: 20px; font-size: 0.7rem; cursor: pointer; }
-.export-btn { background: #2a5a5a; border: none; color: #eef5ff; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; cursor: pointer; transition: 0.2s; }
+.export-btn { background: #2a5a5a; border: none; color: #eef5ff; padding: 5px 10px; border-radius: 20px; font-size: 0.7rem; cursor: pointer; transition: 0.2s; }
 .export-btn:hover { background: #2dd4bf; color: #0a121a; }
 
 .kpi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
@@ -25,7 +25,7 @@ body { background: #0a0f1a; font-family: 'Inter', sans-serif; padding: 8px; colo
 
 .two-columns { display: flex; gap: 10px; align-items: stretch; margin-bottom: 10px; }
 .left-column { flex: 5; min-width: 0; display: flex; flex-direction: column; }
-.right-column { flex: 2.5; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.right-column { flex: 2.5; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
 .card { background: #0e1620; border-radius: 12px; padding: 10px; border: 1px solid #2a3a4a; flex: 1; display: flex; flex-direction: column; }
 .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding-bottom: 5px; border-bottom: 1px solid #2a3a4a; flex-wrap: wrap; gap: 6px; flex-shrink: 0; }
 .card-header h3 { font-size: 0.8rem; font-weight: 600; color: #c0e0e0; }
