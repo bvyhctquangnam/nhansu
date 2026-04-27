@@ -285,7 +285,7 @@ function updateDashboard() {
     document.getElementById('kpiGrid').innerHTML = `
         <div class="kpi-card"><div class="kpi-title">👥 Tổng nhân sự</div><div class="kpi-value">${total}</div><div class="kpi-compare">Toàn bệnh viện</div></div>
         <div class="kpi-card"><div class="kpi-title">🏥 Nhân viên y tế</div><div class="kpi-value">${totalNhanVienYTe}</div><div class="kpi-compare">Bác sĩ: ${totalBacSi} | Y sĩ: ${totalYSi} | ĐD: ${totalDieuDuong}</div></div>
-        <div class="kpi-card"><div class="kpi-title">📜 Có GPHN</div><div class="kpi-value">${totalCCHN}</div><div class="kpi-compare">Tỷ lệ: ${totalNhanVienYTe ? (totalCCHN/totalNhanVienYTe*100).toFixed(1) : 0}% (trên Nhân viên y tế)</div></div>
+        <div class="kpi-card"><div class="kpi-title">📜 Có Giấy phép hành nghề</div><div class="kpi-value">${totalCCHN}</div><div class="kpi-compare">Tỷ lệ: ${totalNhanVienYTe ? (totalCCHN/totalNhanVienYTe*100).toFixed(1) : 0}% (trên Nhân viên y tế)</div></div>
         <div class="kpi-card"><div class="kpi-title">🎓 Trình độ sau đại học</div><div class="kpi-value">${sauDaiHoc}</div><div class="kpi-compare">Tiến sĩ/Chuyên khoa II/Thạc sĩ/Chuyên khoa I</div></div>
         <div class="kpi-card"><div class="kpi-title">📚 CME ≥12 tiết</div><div class="kpi-value">${trainingRate}%</div><div class="kpi-compare">${trainedCount}/${total} đạt chuẩn</div></div>
         <div class="kpi-card"><div class="kpi-title">🏢 Số khoa/phòng</div><div class="kpi-value">${new Set(allStaff.map(s => s.khoa)).size}</div><div class="kpi-compare">Chuyên môn & Hành chính</div></div>
