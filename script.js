@@ -311,13 +311,13 @@ function updateDashboard() {
     const bsDdToanVien = soDdHienTai > 0 ? soBsHienTai / soDdHienTai : 0;
     const dsToanVien = soGiuongHienTai > 0 ? soDsHienTai / soGiuongHienTai : 0;
     document.getElementById('bsGiuanToanVienSo').innerHTML = `${soBsHienTai} BS / ${soGiuongHienTai} giường`;
-    document.getElementById('bsGiuanToanVien').innerHTML = `<strong>${bsToanVien.toFixed(3)}</strong>`;
+    document.getElementById('bsGiuanToanVien').innerHTML = `${bsToanVien.toFixed(3)}`;
     document.getElementById('ddGiuanToanVienSo').innerHTML = `${soDdHienTai} ĐD / ${soGiuongHienTai} giường`;
-    document.getElementById('ddGiuanToanVien').innerHTML = `<strong>${ddToanVien.toFixed(3)}</strong>`;
+    document.getElementById('ddGiuanToanVien').innerHTML = `${ddToanVien.toFixed(3)}`;
     document.getElementById('bsDdToanVienSo').innerHTML = `${soBsHienTai} BS / ${soDdHienTai} ĐD`;
-    document.getElementById('bsDdToanVien').innerHTML = `<strong>${bsDdToanVien.toFixed(2)}</strong>`;
+    document.getElementById('bsDdToanVien').innerHTML = `${bsDdToanVien.toFixed(2)}`;
     document.getElementById('dsGiuanToanVienSo').innerHTML = `${soDsHienTai} DS / ${soGiuongHienTai} giường`;
-    document.getElementById('dsGiuanToanVien').innerHTML = `<strong>${dsToanVien.toFixed(3)}</strong>`;
+    document.getElementById('dsGiuanToanVien').innerHTML = `${dsToanVien.toFixed(3)}`;
 
     const khoaLamSang = ["Nội", "Ngoại", "Lão", "Châm cứu", "PHCN"];
     let bsKhoaHtml = "", ddKhoaHtml = "";
