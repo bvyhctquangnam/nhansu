@@ -21,7 +21,7 @@ body { background: #0a0f1a; font-family: 'Inter', sans-serif; padding: 8px; colo
 .kpi-card:nth-child(6) { border-left-color: #f97316; }
 .kpi-title { font-size: 0.65rem; text-transform: uppercase; font-weight: 600; color: #8aabba; margin-bottom: 3px; }
 .kpi-value { font-size: 1.25rem; font-weight: 800; color: white; line-height: 1.2; }
-.kpi-compare { font-size: 0.65rem; margin-top: 4px; padding-top: 3px; border-top: 1px solid #2a3a4a; }
+.kpi-compare { font-size: 0.7rem; margin-top: 4px; padding-top: 3px; border-top: 1px solid #2a3a4a; }
 
 .two-columns { display: flex; gap: 10px; align-items: stretch; margin-bottom: 10px; }
 .left-column { flex: 7; min-width: 0; display: flex; flex-direction: column; }
